@@ -1,11 +1,7 @@
 #!/usr/bin/env python3
 
 import argparse, datetime, logging, math, os, os.path, random, re, sys
-
-try:
-    import winsound
-except Exception as e:
-    logging.warning("sound output only supported on Windows")
+import simpleaudio as sa
 
 from PySide2.QtGui import QGuiApplication, QFontDatabase
 from PySide2.QtQml import QQmlApplicationEngine, qmlRegisterType
@@ -63,7 +59,8 @@ class Recorder(QObject):
 
     @Slot(str)
     def playFile(self, filename):
-        winsound.PlaySound(filename, winsound.SND_FILENAME)
+        wave_obj = sa.WaveObject.from_wave_file(filename)
+        play_obj = wave_obj.play()
 
     @Slot(str)
     def deleteFile(self, filename):
