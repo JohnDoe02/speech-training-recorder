@@ -56,7 +56,9 @@ class Recorder(QObject):
         self.audio.write_wav(filename, data)
         scriptText = self.window.property('scriptText')
         with open(os.path.join(self.window.property('saveDir'), "recorder.tsv"), "a") as xsvfile:
-            xsvfile.write('\t'.join([filename, '0', self.window.property('promptsName'), '', self.sanitize_script(scriptText)]) + '\n')
+            name_begin = len(filename) - filename[::-1].find("/")
+            name = filename[name_begin:]
+            xsvfile.write('\t'.join([name, '0', self.window.property('promptsName'), '', self.sanitize_script(scriptText)]) + '\n')
         logging.debug("wrote %s to %s", len(data), filename)
 
     @Slot(str)
@@ -143,7 +145,7 @@ def main():
         respectively.
     ''')
     parser.add_argument('-p', '--prompts_filename', help='file containing prompts to choose from')
-    parser.add_argument('-d', '--save_dir', default='../audio_data', help='where to save .wav & recorder.tsv files (default: %(default)s)')
+    parser.add_argument('-d', '--save_dir', default='../dataset/dictation', help='where to save .wav & recorder.tsv files (default: %(default)s)')
     parser.add_argument('-c', '--prompts_count', type=int, default=100, help='number of prompts to select and display (default: %(default)s)')
     parser.add_argument('-l', '--prompt_len_soft_max', type=int)
     args = parser.parse_args()
