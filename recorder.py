@@ -2,6 +2,7 @@
 
 import argparse, datetime, logging, math, os, os.path, random, re, sys
 import simpleaudio as sa
+import wave
 
 from PySide2.QtGui import QGuiApplication, QFontDatabase
 from PySide2.QtQml import QQmlApplicationEngine, qmlRegisterType
@@ -51,10 +52,17 @@ class Recorder(QObject):
         self.window.setProperty('scriptFilename', filename)
         self.audio.write_wav(filename, data)
         scriptText = self.window.property('scriptText')
+
+        wave_file = wave.open(filename,'r')
+        frames = wave_file.getnframes()
+        rate = wave_file.getframerate()
+        duration = frames / float(rate)
+        wave_file.close()
+
         with open(os.path.join(self.window.property('saveDir'), "recorder.tsv"), "a") as xsvfile:
             name_begin = len(filename) - filename[::-1].find("/")
             name = filename[name_begin:]
-            xsvfile.write('\t'.join([name, '0', self.window.property('promptsName'), '', self.sanitize_script(scriptText)]) + '\n')
+            xsvfile.write('\t'.join([name, "{:.2f}".format(duration), self.window.property('promptsName'), '', self.sanitize_script(scriptText)]) + '\n')
         logging.debug("wrote %s to %s", len(data), filename)
 
     @Slot(str)
