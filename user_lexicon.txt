@@ -1,0 +1,68 @@
+abs-path e I b i E s p { T
+amper { m p V r
+aswirl V s w 3 l
+athelgard's V T E l g V r d z
+atremble V t r E m b V l
+backspace b { k s p e I s
+blackly b l { k l i
+brattling b r { t l V N
+brooding-narrative b r u d I N n { r V t I v
+caret k { r V t
+castorbeans k { s t 3 b i n z
+const k A n s t
+creekbeds k r i k b E d z
+dashword d { S w 3 d
+demineralization d i m I n V r V l V z e I S V n
+dotword d A t w 3 d
+dubby d V b i
+dubquote d V b k w o U t
+dubquotes d V b k w o U t s
+dunzie d V n z aI
+eagles' i g V l z
+env E n v
+exp E k s
+falconswift f { l k V n s w I f t
+filetype f aI l t aI p
+firesnakes f aI 3 s n e I k s
+fuliginous f j u l I dZ V n V s
+grep g r E p
+herogar h E r V g V r
+hindparts h aI n d p A r t s
+horridness h O r V d n V s
+hrothgar's h r A T g V r z
+hurls h 3 l z
+init V n I t
+irongray aI 3 n g r e I
+kaldi k { l d i
+lacket l { k V t
+langle l { n g V l
+leetcode l i t o U d
+libri l I b r i
+meadhall m i d h O l
+meady m i d i
+natword n { t w V r d
+onk O N k
+paren p E r V n
+parens p E r V n z
+rangle r { n g V l
+raren r E r V n
+rebase r i b e I s
+rel-path r E l p { T
+reupholstering r i V p h o U l s t 3 I N
+rockslides r A k s l aI d z
+scope-resolve s k o U p r i z A l v
+scyld s I l d
+snakeword s n e I k w 3 d
+soodoo s u d u
+spraddle s p r { d V l
+surmounts s 3 m aU n t s
+ticky t I k i
+tombed t u m d
+unfooled V n f u l d
+waaah w A V
+warplay w O r p l e I
+watersnakes w O t 3 s n e I k s
+whalecocks w e I l k A k s
+wolfslopes w U l f s l o U p s
+zamia-speech z e I m i V s p i tS
+zool z u l
